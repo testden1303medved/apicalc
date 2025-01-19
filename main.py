@@ -12,7 +12,7 @@ def create_user():
     if not amount:
         return jsonify({"error": "missing 'y'"}), 400
     
-    x = character * int(amount)
+    x = character * (int(amount) * 4)
     
     return jsonify({"result": x}), 200
 
