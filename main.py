@@ -7,12 +7,12 @@ def create_user():
     character = request.json.get('x')
     amount = request.json.get('y')
     
-    if not character or not isinstance(character, str):
-        return jsonify({"error": "Invalid or missing 'x'"}), 400
-    if not amount or not isinstance(amount, int):
-        return jsonify({"error": "Invalid or missing 'y'"}), 400
+    if not character:
+        return jsonify({"error": "missing 'x'"}), 400
+    if not amount:
+        return jsonify({"error": "missing 'y'"}), 400
     
-    x = character * amount
+    x = character * int(amount)
     
     return jsonify({"result": x}), 200
 
