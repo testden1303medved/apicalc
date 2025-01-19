@@ -10,7 +10,7 @@ def center_calculator():
     
     if not word : return jsonify({"error": "missing 'x'"}), 400
     if not width: return jsonify({"error": "missing 'y'"}), 400
-    if not char : char = " "
+    if not fill : fill = " "
     
     total_padding = max(0, width - len(word))
     left_padding  = total_padding // 2
@@ -21,6 +21,5 @@ def center_calculator():
 
     
     return jsonify({"result": f"{left_fill}$$${right_fill}"}), 200
-
-if __name__ == "__main__":
-    app.run(port=8080)
+    
+app.run(port=8080)
