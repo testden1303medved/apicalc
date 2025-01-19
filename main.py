@@ -22,4 +22,5 @@ def center_calculator():
     
     return jsonify({"result": f"{left_fill}$$${right_fill}"}), 200
     
-app.run(port=8080)
+if __name__ == "__main__":
+    app.run(port=8080)
